@@ -22,7 +22,7 @@ const NavBar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/edcefe39-13ba-43fc-91df-c5302c644f8b.png" 
+              src="./lovable-uploads/edcefe39-13ba-43fc-91df-c5302c644f8b.png" 
               alt="Shariff Digital Logo" 
               className="h-12"
             />
