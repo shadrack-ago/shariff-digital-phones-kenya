@@ -10,6 +10,7 @@ import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import CategoryPage from "./pages/CategoryPage";
 import ContactPage from "./pages/ContactPage";
+import DealsPage from "./pages/DealsPage";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/samsung" element={<CategoryPage />} />
           <Route path="/iphone" element={<CategoryPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/deals" element={<DealsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

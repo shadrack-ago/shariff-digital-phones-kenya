@@ -1,8 +1,8 @@
-
-import { Phone, MapPin, ShoppingCart } from "lucide-react";
+import { MapPin, ShoppingCart, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
 import { getFeaturedProducts } from "@/data/products";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const featuredProducts = getFeaturedProducts();
@@ -31,8 +31,12 @@ const HomePage = () => {
           <div className="md:w-1/2 flex justify-center">
             <div className="relative">
               <div className="absolute -inset-0.5 bg-white/20 rounded-2xl blur"></div>
-              <div className="bg-blue-700 p-8 rounded-2xl relative">
-                <Phone className="h-32 w-32 mx-auto" />
+              <div className="bg-blue-700 p-6 rounded-2xl relative">
+                <img 
+                  src="/lovable-uploads/edcefe39-13ba-43fc-91df-c5302c644f8b.png" 
+                  alt="Shariff Digital Logo" 
+                  className="h-32 w-auto"
+                />
               </div>
             </div>
           </div>
@@ -52,6 +56,24 @@ const HomePage = () => {
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
               View All Products
               <ShoppingCart className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Crazy Deals Banner */}
+      <section className="py-10 bg-red-50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center justify-center text-center">
+            <div className="flex items-center mb-4">
+              <Tag className="h-8 w-8 text-red-500 mr-2" />
+              <h2 className="text-3xl font-bold">Crazy Deals</h2>
+            </div>
+            <p className="text-lg mb-6 max-w-2xl">
+              Don't miss our limited time offers with discounts up to 30% on selected phones!
+            </p>
+            <Button size="lg" className="bg-red-500 hover:bg-red-600" asChild>
+              <Link to="/deals">View Deals</Link>
             </Button>
           </div>
         </div>
