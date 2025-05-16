@@ -1,3 +1,4 @@
+
 import { MapPin, ShoppingCart, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/ProductCard";
@@ -9,9 +10,16 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
+      {/* Hero Section with Enhanced Background */}
+      <section className="bg-gradient-to-r from-blue-700 to-blue-500 text-white relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-blue-300"></div>
+          <div className="absolute bottom-10 right-20 w-60 h-60 rounded-full bg-blue-400"></div>
+          <div className="absolute top-1/2 left-1/2 w-80 h-80 rounded-full bg-blue-200 transform -translate-x-1/2 -translate-y-1/2"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center relative z-10">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Welcome to Shariff Digitals
@@ -20,22 +28,22 @@ const HomePage = () => {
               Your trusted source for brand new and Ex UK Samsung and iPhone devices in Nairobi, Kenya.
             </p>
             <div className="flex space-x-4">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                Shop Samsung
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100" asChild>
+                <Link to="/samsung">Shop Samsung</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-700">
-                Shop iPhone
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-700" asChild>
+                <Link to="/iphone">Shop iPhone</Link>
               </Button>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
             <div className="relative">
               <div className="absolute -inset-0.5 bg-white/20 rounded-2xl blur"></div>
-              <div className="bg-blue-700 p-6 rounded-2xl relative">
+              <div className="bg-blue-700 p-6 rounded-2xl relative backdrop-blur-sm border border-blue-400/30">
                 <img 
                   src="/lovable-uploads/edcefe39-13ba-43fc-91df-c5302c644f8b.png" 
                   alt="Shariff Digital Logo" 
-                  className="h-32 w-auto"
+                  className="h-40 w-auto"
                 />
               </div>
             </div>
@@ -99,26 +107,32 @@ const HomePage = () => {
       </section>
 
       {/* Store Information */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-r from-blue-700 to-blue-500 text-white relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute bottom-10 left-10 w-40 h-40 rounded-full bg-blue-300"></div>
+          <div className="absolute top-10 right-20 w-60 h-60 rounded-full bg-blue-400"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl font-bold mb-8 text-center">Visit Our Store</h2>
           <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10">
-            <div className="flex items-center">
+            <div className="flex items-center backdrop-blur-sm bg-blue-600/30 p-4 rounded-lg">
               <MapPin className="h-10 w-10 mr-4" />
               <div>
                 <h3 className="text-xl font-bold">Nairobi Store</h3>
                 <p>123 Tom Mboya Street, Nairobi, Kenya</p>
               </div>
             </div>
-            <div>
+            <div className="backdrop-blur-sm bg-blue-600/30 p-4 rounded-lg">
               <h3 className="text-xl font-bold mb-2">Store Hours</h3>
               <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
               <p>Sunday: Closed</p>
             </div>
           </div>
           <div className="mt-10 text-center">
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-700">
-              Contact Us
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-blue-700" asChild>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>
